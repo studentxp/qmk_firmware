@@ -1,0 +1,26 @@
+name: Build G50 RP2040 Firmware
+
+on:
+  push:
+    paths:
+      - "keyboards/g50/**"
+      - ".github/workflows/build_g50.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/qmk/qmk_cli
+    steps:
+      - name: Checkout QMK firmware fork
+        uses: actions/checkout@v4
+
+      - name: Compile G50 VIA firmware
+        run: qmk compile -kb g50 -km via
+
+      - name: Upload UF2 firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: G50-RP2040-UF2
+          path: "*.uf2"
+          if-no-files-found: error
