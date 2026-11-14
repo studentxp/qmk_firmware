@@ -1,3 +1,4 @@
+
 name: Build G50 RP2040 Firmware
 
 on:
@@ -11,12 +12,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: ghcr.io/qmk/qmk_cli
+
     steps:
-      - name: Checkout QMK firmware fork
+      - name: Checkout QMK firmware
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Fix Git safe directory
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Initialize submodules
+        run: |
+          git submodule update --init --recursive
 
       - name: Compile G50 VIA firmware
-        run: qmk compile -kb g50 -km via
+        run: |
+          qmk compile -kb g50 -km via
 
       - name: Upload UF2 firmware
         uses: actions/upload-artifact@v4
