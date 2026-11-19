@@ -1,2 +1,4 @@
 # QMK keyboard-level options
-CONSOLE_ENABLE = no
+VIA_ENABLE = yes
+VIAL_ENABLE = no
+LTO_ENABLE = yes
