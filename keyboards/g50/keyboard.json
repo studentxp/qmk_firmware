@@ -4,6 +4,11 @@
     "maintainer": "DIY",
     "processor": "RP2040",
     "bootloader": "rp2040",
+    "usb": {
+        "vid": "0x0483",
+        "pid": "0x5750",
+        "device_version": "0x0001"
+    },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
         "rows": ["GP0","GP1","GP2","GP3","GP4","GP5","GP6","GP7"],
