@@ -1,1 +1,1 @@
-# QMK keyboard-level options
+VIA_ENABLE = yes
