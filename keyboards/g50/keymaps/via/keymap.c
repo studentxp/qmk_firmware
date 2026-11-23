@@ -11,13 +11,13 @@ GP8(c0),GP9(c1),GP10(c2),GP11(c3),GP12(c4),GP13(c5),GP14(c6),GP16(c7),GP17(c8),G
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT(
 // R0 GP0
-    KC_Y,    KC_F3,   KC_CAPS, KC_T,    KC_F7,   KC_LBRC, KC_RBRC, KC_NO,   KC_NO,   KC_NO,   KC_NLCK, KC_NO,   KC_NO,   KC_BSPC, KC_KP_4, KC_KP_8, KC_NO,   KC_LSFT,
+    KC_Y,    KC_F3,   KC_CAPS, KC_T,    KC_F7,   KC_LBRC, KC_RBRC, KC_NO,   KC_NO,   KC_NO,   KC_NUM,  KC_NO,   KC_NO,   KC_BSPC, KC_KP_4, KC_KP_8, KC_NO,   KC_LSFT,
 // R1 GP1
     KC_N,    KC_NO,   KC_NO,   KC_B,    KC_NO,   KC_SLSH, KC_NO,   KC_NO,   KC_NO,   KC_RALT, KC_RGHT, KC_LEFT, KC_DOWN, KC_SPC,  KC_NO,   KC_KP_3, KC_KP_DOT,KC_NO,
 // R2 GP2
-    KC_M,    KC_C,    KC_X,    KC_V,    KC_DOT,  KC_NO,   KC_COMM, KC_RCTL, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,  KC_NO,   KC_KP_MUL,KC_KP_ENT,KC_RSFT,
+    KC_M,    KC_C,    KC_X,    KC_V,    KC_DOT,  KC_NO,   KC_COMM, KC_RCTL, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,  KC_NO,   KC_KP_ASTERISK,KC_KP_ENTER,KC_RSFT,
 // R3 GP3
-    KC_J,    KC_D,    KC_S,    KC_F,    KC_L,    KC_SCLN, KC_K,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_FN1,  KC_NO,   KC_BSLS, KC_APP,  KC_KP_1, KC_KP_5, KC_NO,
+    KC_J,    KC_D,    KC_S,    KC_F,    KC_L,    KC_SCLN, KC_K,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   MO(1),   KC_NO,   KC_BSLS, KC_APP,  KC_KP_1, KC_KP_5, KC_NO,
 // R4 GP4
     KC_7,    KC_3,    KC_2,    KC_4,    KC_9,    KC_0,    KC_8,    KC_NO,   KC_INS,  KC_F12,  KC_END,  KC_F11,  KC_F10,  KC_PGDN, KC_KP_0, KC_KP_2, KC_NO,   KC_NO,
 // R5 GP5
@@ -58,12 +58,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
 )
 };
-
-#ifdef VIA_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [1] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [2] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [3] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-};
-#endif
